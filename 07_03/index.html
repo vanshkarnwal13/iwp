@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="name">
+    <button type="button" id="done">submit</button>
+    <div id="display">
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    $(document).ready(function(){
+        $("#done").click(function(){
+            var name = $("#name").val();
+            var result = $(name).text().split('');
+           //console.log(result);
+            var sum=0;
+            var i = name.length;
+            var a = [];
+            var sum1=0;
+            for(let j=0; j<i; j++)
+            {
+                a.push(name.charAt(j).toUpperCase());
+            }
+            console.log(a);
+            while(i>=0){
+                if(a[i]=="A" || a[i]=="I" || a[i]=="J" || a[i]=="Q" || a[i]=="Y")
+                sum=sum+1;
+                else if(a[i]=="B" || a[i]=="K" || a[i]=="R")
+                sum=sum+2;
+                else if(a[i]=="C" || a[i]=="G" || a[i]=="L" || a[i]=="S")
+                sum=sum+3;
+                else if(a[i]=="D" || a[i]=="M" || a[i]=="T")
+                sum=sum+4;
+                else if(a[i]=="E" || a[i]=="H" || a[i]=="N"  || a[i]=="X")
+                sum=sum+5;
+                else if(a[i]=="U" || a[i]=="V" || a[i]=="W")
+                sum=sum+6;
+                else if(a[i]=="0" || a[i]=="Z")
+                sum=sum+7;
+                else if(a[i]=="F" || a[i]=="P")
+                sum=sum+8;
+                i=i-1;
+            }
+            if(sum>9 && sum!=11 && sum!=22 && sum!=33){
+                while (sum) {
+                sum1 += sum % 10;
+                sum = Math.floor(sum / 10);
+                }
+            }
+            else{
+                sum1=sum;
+            }
+            console.log(sum1);
+            switch(sum1){
+                case 1:
+                $("#display").html("<h4>You radiate with a dynamic and efficient energy.</h4>");
+                break;
+                case 2:
+                $("#display").html("<h4>You appear friendly and unpretentious..</h4>");
+                break;
+                case 3:
+                $("#display").html("<h4>You are uplifting, inspiring, and charming.</h4>");
+                break;
+                case 4:
+                $("#display").html("<h4>You love the intimacy, consistency, and the security a family provides.</h4>");
+                break;
+                case 5:
+                $("#display").html("<h4>You are a stimulating person.</h4>");
+                break;
+                case 6:
+                $("#display").html("<h4>You radiate understanding and compassion.</h4>");
+                break;
+                case 7:
+                $("#display").html("<h4>You seem mysterious and different.</h4>");
+                break;
+                case 8:
+                $("#display").html("<h4>You appear strong and powerful.</h4>");
+                break;
+                case 9:
+                $("#display").html("<h4>You have an impressive and aristocratic bearing.</h4>");
+                break;
+                case 11:
+                $("#display").html("<h4>You have worked hard to gain confidence and overcome, at least to some extent, an in-born shyness.</h4>");
+                break;
+                case 22:
+                $("#display").html("<h4>You radiate reliability and consistency.</h4>");
+                break;
+                case 33:
+                $("#display").html("<h4>You inspire confidence.</h4>");
+                break;
+                default:
+                alert("invalid name");
+                break;
+
+
+            }
+            
+        });
+
+    });
+
+</script>
+
+</body>
+</html>

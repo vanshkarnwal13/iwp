@@ -1,0 +1,20 @@
+.container{
+    width: 50%;
+    position: relative;
+    margin-left: 5%;
+    margin-top: 10%;
+    margin-right: 45%;
+   
+    background-color: white;
+}
+.containerr{
+    width: 40%;
+    position: relative;
+    margin-left: 5%;
+    margin-top: 3%;
+    margin-right: 45%;
+    background-color: rgb(243, 245, 156);
+    padding: 1%;
+    border-style: dotted solid dashed;
+    
+}

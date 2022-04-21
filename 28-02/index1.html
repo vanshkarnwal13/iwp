@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            margin: 5% 20%;
+            padding: 3% 5%;
+            font-size: 1.4rem;
+            background-color: rgb(182, 181, 181);
+        }
+    </style>
+</head>
+<body >
+    <form name="test" action="index1_2.html" method="GET" id="form">
+        <div class="box">
+            <fieldset>
+                <legend>General Details</legend>
+                Name: <input type="text" id="1" size="30"><br>
+                Email: <input type="email" id="2" size="30"><br>
+                Course:
+                <input type="radio" name="course" value="male" id="3">Male
+                <input type="radio" name="course" value="female" id="4">Female<br>
+                How did u hear about us:
+                <select name="dropbox" id="10">
+                    <option value="">please select </option>
+                    <option value="search engine">Search engine</option>
+                    <option value="instagrm">instagrm</option>
+                    <option value="facebook">facebook</option>
+                </select><br>
+                Comments:<br>
+                <textarea id="text" >
+        
+                </textarea>
+            </fieldset>
+            <fieldset>
+                <legend>User Account Details</legend>
+                Username: <input type="text" id="5"size="30"><br>
+                Password: <input type="password" id="6" size="30"><br>
+                Newsletter subscriptions:
+                <input type="checkbox" name="sub" value="PHP articles" id="7">PHP articles
+                <input type="checkbox" name="sub" value="PHP news"id="8">PHP news<br>
+            </fieldset>
+            <input type="button" value="Submit" onclick="valid()">
+            <input type="button" value="reset" onclick="reset()">
+           </div>
+    </form>
+    <script>
+        function nameValidation(){
+    var regexp=/^[a-z]+$/;
+    var x=document.getElementById("1").value;
+    if(regexp.test(x)==false)
+            {
+                alert("enter a valid name"); 
+                
+            }
+            else{
+                return true;
+            }
+}
+function emailValidation(){
+    var regexp=/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/;
+    var x=document.getElementById("2").value;
+    if(regexp.test(x)==false)
+            {
+                alert("enter a valid email address");
+                
+            }
+    else{
+        return true;
+    }
+}
+function courseValidation(){
+    var cousrse1=document.getElementById("3").checked;
+    var cousrse2=document.getElementById("4").checked;
+    if((cousrse1==false)&&(cousrse2==false))
+    {
+        alert("please select course");
+    }
+    else{
+        return true;
+    }
+
+}
+function hearValidation(){
+    
+    if(document.test.dropbox.selectedIndex == 0)
+   {
+       
+       alert("Please select a value" );
+   }
+   else
+   {
+       return true;
+    }
+}
+function usernameValidation(){
+    var regexp=/^[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$/;
+    var x=document.getElementById("5").value;
+    if(regexp.test(x)==false)
+            {
+                alert("enter a valid username");            
+            }
+    else{ 
+            return true;
+        }
+
+}
+
+function passwordValidation(){
+    var regexp=/(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
+    var x=document.getElementById("6").value;
+    if(regexp.test(x)==false)
+            {
+                alert("enter a valid password");            
+            }
+    else{ 
+            return true;
+        }
+
+}
+
+function subValidation(){
+    var sub1=document.getElementById("7").checked;
+    var sub2=document.getElementById("8").checked;
+    if((sub1==false)&&(sub2==false))
+    {
+        alert("please select subscriptions ");
+    }
+    else{
+        return true;
+    }
+}
+
+function valid(){
+    var form = document.getElementById("form");
+    nameValidation();
+    emailValidation();
+    courseValidation();
+    hearValidation();
+    usernameValidation();
+    passwordValidation();
+    subValidation();
+    confirm("Whether to submit the data");
+    form.submit();
+
+}
+
+
+function reset(){
+    document.getElementById("1").reset();
+    document.getElementById("2").reset();
+    document.getElementById("3").reset();
+    document.getElementById("4").reset();
+    document.getElementById("5").reset();
+    document.getElementById("6").reset();
+    document.getElementById("7").reset();
+    document.getElementById("8").reset();
+    document.getElementById("text").reset();
+    
+}
+
+    </script>
+</body>
+</html>

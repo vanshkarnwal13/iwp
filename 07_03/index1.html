@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    enter birth year<input type="text" id="birth"><br>
+    <button type="button" id="done" onclick="date()">submit</button>
+    <div >
+        <table id="display" border="1">
+
+        </table>
+    </div>
+<script>
+    function date(){
+        var birth = document.getElementById("birth").value;
+            var rem;
+            rem = birth % 12;
+            console.log(rem);
+            switch(rem){
+                case 0:
+                document.getElementById("display").innerHTML="<tr><th>sign</th><th>lucky number</th><th>lucky color</th></tr><tr><td>MONKEY</td><td>1,9</td><td>red,blue,purple</td></tr>";
+                case 1:
+                document.getElementById("display").innerHTML="<tr><th>sign</th><th>lucky number</th><th>lucky color</th></tr><tr><td>ROOSTER</td><td>5,7,8</td><td>gold,brown,yellow</td></tr>";
+                break;
+                case 2:
+                document.getElementById("display").innerHTML="<tr><th>sign</th><th>lucky number</th><th>lucky color</th></tr><tr><td>DOG</td><td>3,4,9</td><td>green,red,purple</td></tr>";
+                break;
+                case 3:
+                document.getElementById("display").innerHTML="<tr><th>sign</th><th>lucky number</th><th>lucky color</th></tr><tr><td>PIG</td><td>1,9</td><td>red,blue,purple</td></tr>";
+                break;
+                case 4:
+                document.getElementById("display").innerHTML="<tr><th>sign</th><th>lucky number</th><th>lucky color</th></tr><tr><td>RAT</td><td>1,9</td><td>red,blue,purple</td></tr>";
+                break;
+                case 5:
+                document.getElementById("display").innerHTML="<tr><th>sign</th><th>lucky number</th><th>lucky color</th></tr><tr><td>OX</td><td>1,9</td><td>red,blue,purple</td></tr>";
+                break;
+                case 6:
+                document.getElementById("display").innerHTML="<tr><th>sign</th><th>lucky number</th><th>lucky color</th></tr><tr><td>TIGER</td><td>1,3,4</td><td>grey,blue,white,orange</td></tr>";
+                break;
+                case 7:
+                document.getElementById("display").innerHTML="<tr><th>sign</th><th>lucky number</th><th>lucky color</th></tr><tr><td>RABBIT</td><td>3,4,9</td><td>red,blue,pink,purple</td></tr>";
+                break;
+                case 8:
+                document.getElementById("display").innerHTML="<tr><th>sign</th><th>lucky number</th><th>lucky color</th></tr><tr><td>DRAGON</td><td>1,6,7</td><td>gold,silver,hoary</td></tr>";
+                break;
+                case 9:
+                document.getElementById("display").innerHTML="<tr><th>sign</th><th>lucky number</th><th>lucky color</th></tr><tr><td>SNAKE</td><td>2,8,9</td><td>red,light yellow,black</td></tr>";
+                break;
+                case 10:
+                document.getElementById("display").innerHTML="<tr><th>sign</th><th>lucky number</th><th>lucky color</th></tr><tr><td>HORSE</td><td>2,3,7</td><td>brown,yellow,purple</td></tr>";
+                break;
+                case 11:
+                document.getElementById("display").innerHTML="<tr><th>sign</th><th>lucky number</th><th>lucky color</th></tr><tr><td>SHEEP</td><td>3,4,9</td><td>green,red,purple</td></tr>";
+                break;
+                alert("invalid birth date");
+                break;
+    }
+    }
+</script>
+
+</body>
+</html>
